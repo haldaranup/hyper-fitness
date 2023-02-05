@@ -23,7 +23,7 @@ const login = async (req, res) => {
       result: "Successful logged in",
     });
   }
-  return res.status(400).json({ error: "Username already exists" });
+  return res.status(400).json({ error: "Invalid credentials" });
 };
 const getAllUsers = async (req, res) => {
   const allUsers = await User.find({});
