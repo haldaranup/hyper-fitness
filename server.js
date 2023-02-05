@@ -3,8 +3,7 @@ const db = require("./configs/db");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoute = require("./routes/user.route");
-
-require("dotenv").config();
+const env = require("./configs/env");
 
 const app = express();
 
@@ -18,6 +17,6 @@ db.once("open", () => {
   console.log("Connected to DB");
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(env.port || 5000, () => {
   console.log("Listening to port 5000");
 });
